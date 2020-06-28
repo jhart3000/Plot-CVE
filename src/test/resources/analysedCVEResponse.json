@@ -1,0 +1,866 @@
+[
+  {
+    "year": "2012",
+    "cveBreakdown": {
+      "total": 76,
+      "low": 0,
+      "medium": 64,
+      "high": 12,
+      "critical": 0
+    },
+    "monthlyDetail": [
+      {
+        "monthValue": 1,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 2,
+        "month": "2",
+        "cveBreakdown": {
+          "total": 24,
+          "low": 0,
+          "medium": 21,
+          "high": 3,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 3,
+        "month": "3",
+        "cveBreakdown": {
+          "total": 36,
+          "low": 0,
+          "medium": 30,
+          "high": 6,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 4,
+        "month": "4",
+        "cveBreakdown": {
+          "total": 14,
+          "low": 0,
+          "medium": 12,
+          "high": 2,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 5,
+        "month": "5",
+        "cveBreakdown": {
+          "total": 1,
+          "low": 0,
+          "medium": 0,
+          "high": 1,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 6,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 7,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 8,
+        "month": "8",
+        "cveBreakdown": {
+          "total": 1,
+          "low": 0,
+          "medium": 1,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 9,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 10,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 11,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 12,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      }
+    ]
+  },
+  {
+    "year": "2016",
+    "cveBreakdown": {
+      "total": 1,
+      "low": 0,
+      "medium": 1,
+      "high": 0,
+      "critical": 0
+    },
+    "monthlyDetail": [
+      {
+        "monthValue": 1,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 2,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 3,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 4,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 5,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 6,
+        "month": "6",
+        "cveBreakdown": {
+          "total": 1,
+          "low": 0,
+          "medium": 1,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 7,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 8,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 9,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 10,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 11,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 12,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      }
+    ]
+  },
+  {
+    "year": "2017",
+    "cveBreakdown": {
+      "total": 4,
+      "low": 0,
+      "medium": 3,
+      "high": 1,
+      "critical": 0
+    },
+    "monthlyDetail": [
+      {
+        "monthValue": 1,
+        "month": "1",
+        "cveBreakdown": {
+          "total": 1,
+          "low": 0,
+          "medium": 0,
+          "high": 1,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 2,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 3,
+        "month": "3",
+        "cveBreakdown": {
+          "total": 1,
+          "low": 0,
+          "medium": 1,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 4,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 5,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 6,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 7,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 8,
+        "month": "8",
+        "cveBreakdown": {
+          "total": 1,
+          "low": 0,
+          "medium": 1,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 9,
+        "month": "9",
+        "cveBreakdown": {
+          "total": 1,
+          "low": 0,
+          "medium": 1,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 10,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 11,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 12,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      }
+    ]
+  },
+  {
+    "year": "2018",
+    "cveBreakdown": {
+      "total": 22,
+      "low": 0,
+      "medium": 19,
+      "high": 3,
+      "critical": 0
+    },
+    "monthlyDetail": [
+      {
+        "monthValue": 1,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 2,
+        "month": "2",
+        "cveBreakdown": {
+          "total": 3,
+          "low": 0,
+          "medium": 2,
+          "high": 1,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 3,
+        "month": "3",
+        "cveBreakdown": {
+          "total": 1,
+          "low": 0,
+          "medium": 1,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 4,
+        "month": "4",
+        "cveBreakdown": {
+          "total": 1,
+          "low": 0,
+          "medium": 1,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 5,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 6,
+        "month": "6",
+        "cveBreakdown": {
+          "total": 1,
+          "low": 0,
+          "medium": 1,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 7,
+        "month": "7",
+        "cveBreakdown": {
+          "total": 2,
+          "low": 0,
+          "medium": 2,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 8,
+        "month": "8",
+        "cveBreakdown": {
+          "total": 1,
+          "low": 0,
+          "medium": 1,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 9,
+        "month": "9",
+        "cveBreakdown": {
+          "total": 2,
+          "low": 0,
+          "medium": 1,
+          "high": 1,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 10,
+        "month": "10",
+        "cveBreakdown": {
+          "total": 3,
+          "low": 0,
+          "medium": 3,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 11,
+        "month": "11",
+        "cveBreakdown": {
+          "total": 5,
+          "low": 0,
+          "medium": 5,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 12,
+        "month": "12",
+        "cveBreakdown": {
+          "total": 3,
+          "low": 0,
+          "medium": 2,
+          "high": 1,
+          "critical": 0
+        }
+      }
+    ]
+  },
+  {
+    "year": "2019",
+    "cveBreakdown": {
+      "total": 26,
+      "low": 4,
+      "medium": 15,
+      "high": 7,
+      "critical": 0
+    },
+    "monthlyDetail": [
+      {
+        "monthValue": 1,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 2,
+        "month": "2",
+        "cveBreakdown": {
+          "total": 1,
+          "low": 0,
+          "medium": 0,
+          "high": 1,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 3,
+        "month": "3",
+        "cveBreakdown": {
+          "total": 1,
+          "low": 0,
+          "medium": 0,
+          "high": 1,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 4,
+        "month": "4",
+        "cveBreakdown": {
+          "total": 3,
+          "low": 1,
+          "medium": 2,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 5,
+        "month": "5",
+        "cveBreakdown": {
+          "total": 1,
+          "low": 0,
+          "medium": 0,
+          "high": 1,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 6,
+        "month": "6",
+        "cveBreakdown": {
+          "total": 2,
+          "low": 1,
+          "medium": 0,
+          "high": 1,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 7,
+        "month": "7",
+        "cveBreakdown": {
+          "total": 4,
+          "low": 0,
+          "medium": 3,
+          "high": 1,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 8,
+        "month": "8",
+        "cveBreakdown": {
+          "total": 1,
+          "low": 0,
+          "medium": 1,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 9,
+        "month": "9",
+        "cveBreakdown": {
+          "total": 1,
+          "low": 0,
+          "medium": 0,
+          "high": 1,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 10,
+        "month": "10",
+        "cveBreakdown": {
+          "total": 3,
+          "low": 1,
+          "medium": 2,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 11,
+        "month": "11",
+        "cveBreakdown": {
+          "total": 6,
+          "low": 1,
+          "medium": 5,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 12,
+        "month": "12",
+        "cveBreakdown": {
+          "total": 3,
+          "low": 0,
+          "medium": 2,
+          "high": 1,
+          "critical": 0
+        }
+      }
+    ]
+  },
+  {
+    "year": "2020",
+    "cveBreakdown": {
+      "total": 652,
+      "low": 127,
+      "medium": 404,
+      "high": 121,
+      "critical": 0
+    },
+    "monthlyDetail": [
+      {
+        "monthValue": 1,
+        "month": "1",
+        "cveBreakdown": {
+          "total": 5,
+          "low": 3,
+          "medium": 1,
+          "high": 1,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 2,
+        "month": "2",
+        "cveBreakdown": {
+          "total": 2,
+          "low": 0,
+          "medium": 2,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 3,
+        "month": "3",
+        "cveBreakdown": {
+          "total": 16,
+          "low": 3,
+          "medium": 8,
+          "high": 5,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 4,
+        "month": "4",
+        "cveBreakdown": {
+          "total": 629,
+          "low": 121,
+          "medium": 393,
+          "high": 115,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 5,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 6,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 7,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 8,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 9,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 10,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 11,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      {
+        "monthValue": 12,
+        "month": null,
+        "cveBreakdown": {
+          "total": 0,
+          "low": 0,
+          "medium": 0,
+          "high": 0,
+          "critical": 0
+        }
+      }
+    ]
+  }
+]

@@ -6,7 +6,9 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 
+import static com.cve.plot.helper.JsonHelper.loadJsonFile;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @AutoConfigureMockMvc
@@ -17,6 +19,8 @@ class IntegrationTest {
 
   @Test
   void shouldReturnAnalysedCVE() throws Exception {
-    mvc.perform(get("/analysedCVEData")).andExpect(status().isOk());
+    mvc.perform(get("/analysedCVEData"))
+        .andExpect(status().isOk())
+        .andExpect(content().json(loadJsonFile("analysedCVEResponse.json")));
   }
 }
