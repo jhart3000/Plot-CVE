@@ -13,13 +13,9 @@
 </head>
 
 <body>
-<canvas id="myChart"></canvas>
-<canvas id="myChart2"></canvas>
-<canvas id="myChart3"></canvas>
-<canvas id="myChart4"></canvas>
-<canvas id="myChart5"></canvas>
-<canvas id="myChart6"></canvas>
-<table id="myTable">
+<canvas id="fullChart"></canvas>
+<br>
+<table id="myTable" class="center">
     <thead>
     <tr>
         <th>Year</th>
@@ -30,6 +26,18 @@
     </tr>
     </thead>
 </table>
+<br>
+<canvas id="myChart"></canvas>
+<br>
+<canvas id="myChart2"></canvas>
+<br>
+<canvas id="myChart3"></canvas>
+<br>
+<canvas id="myChart4"></canvas>
+<br>
+<canvas id="myChart5"></canvas>
+<br>
+<canvas id="myChart6"></canvas>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -43,10 +51,68 @@
         crossorigin="anonymous"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.0.min.js"></script>
 <script>
+
+
 		$.getJSON('http://localhost:8080/analysedCVEData', function(json) {
 		      console.log(json);
 
-		    var ctx = document.getElementById('myChart').getContext('2d');
+		      var ctx = document.getElementById('fullChart').getContext('2d');
+		    var chart = new Chart(ctx, {
+		      type: 'line',
+		      options: {
+							responsive: true,
+							hoverMode: 'index',
+							stacked: false,
+							title: {
+								display: true,
+								text:  'Graph Showing How Many CVEs Were Published Per Month At Each Severity Level Between Years ' +json[0].year+ ' and '+ json[5].year
+							},
+							scales: {
+								y: {
+									type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+									display: true,
+									position: 'left',
+								}
+							}
+						},
+
+		      // The data for our dataset
+		      data: {
+		          labels: ['January '+json[0].year, 'February '+json[0].year, 'March '+json[0].year, 'April '+json[0].year, 'May '+json[0].year, 'June '+json[0].year, 'July '+json[0].year, 'August '+json[0].year, 'September '+json[0].year, 'October '+json[0].year, 'November '+json[0].year, 'December '+json[0].year, 'January '+json[1].year, 'February '+json[1].year, 'March '+json[1].year, 'April '+json[1].year, 'May '+json[1].year, 'June '+json[1].year, 'July '+json[1].year, 'August '+json[1].year, 'September '+json[1].year, 'October '+json[1].year, 'November '+json[1].year, 'December '+json[1].year, 'January '+json[2].year, 'February '+json[2].year, 'March '+json[2].year, 'April '+json[2].year, 'May '+json[2].year, 'June '+json[2].year, 'July '+json[2].year, 'August '+json[2].year, 'September '+json[2].year, 'October '+json[2].year, 'November '+json[2].year, 'December '+json[2].year, 'January '+json[3].year, 'February '+json[3].year, 'March '+json[3].year, 'April '+json[3].year, 'May '+json[3].year, 'June '+json[3].year, 'July '+json[3].year, 'August '+json[3].year, 'September '+json[3].year, 'October '+json[3].year, 'November '+json[3].year, 'December '+json[3].year, 'January '+json[4].year, 'February '+json[4].year, 'March '+json[4].year, 'April '+json[4].year, 'May '+json[4].year, 'June '+json[4].year, 'July '+json[4].year, 'August '+json[4].year, 'September '+json[4].year, 'October '+json[4].year, 'November '+json[4].year, 'December '+json[4].year, 'January '+json[5].year, 'February '+json[5].year, 'March '+json[5].year, 'April '+json[5].year, 'May '+json[5].year, 'June '+json[5].year, 'July '+json[5].year, 'August '+json[5].year, 'September '+json[5].year, 'October '+json[5].year, 'November '+json[5].year, 'December '+json[5].year],
+		          datasets: [
+		            {
+		              label: 'Low severity',
+		              backgroundColor: 'rgb(0, 128, 0)',
+		              borderColor: 'rgb(0, 128, 0)',
+		              fill: false,
+		              data: [json[0].monthlyDetail[0].cveBreakdown.low, json[0].monthlyDetail[1].cveBreakdown.low, json[0].monthlyDetail[2].cveBreakdown.low, json[0].monthlyDetail[3].cveBreakdown.low, json[0].monthlyDetail[4].cveBreakdown.low, json[0].monthlyDetail[5].cveBreakdown.low, json[0].monthlyDetail[6].cveBreakdown.low, json[0].monthlyDetail[7].cveBreakdown.low, json[0].monthlyDetail[8].cveBreakdown.low, json[0].monthlyDetail[9].cveBreakdown.low, json[0].monthlyDetail[10].cveBreakdown.low, json[0].monthlyDetail[11].cveBreakdown.low, json[1].monthlyDetail[0].cveBreakdown.low, json[1].monthlyDetail[1].cveBreakdown.low, json[1].monthlyDetail[2].cveBreakdown.low, json[1].monthlyDetail[3].cveBreakdown.low, json[1].monthlyDetail[4].cveBreakdown.low, json[1].monthlyDetail[5].cveBreakdown.low, json[1].monthlyDetail[6].cveBreakdown.low, json[1].monthlyDetail[7].cveBreakdown.low, json[1].monthlyDetail[8].cveBreakdown.low, json[1].monthlyDetail[9].cveBreakdown.low, json[1].monthlyDetail[10].cveBreakdown.low, json[1].monthlyDetail[11].cveBreakdown.low, json[2].monthlyDetail[0].cveBreakdown.low, json[2].monthlyDetail[1].cveBreakdown.low, json[2].monthlyDetail[2].cveBreakdown.low, json[2].monthlyDetail[3].cveBreakdown.low, json[2].monthlyDetail[4].cveBreakdown.low, json[2].monthlyDetail[5].cveBreakdown.low, json[2].monthlyDetail[6].cveBreakdown.low, json[2].monthlyDetail[7].cveBreakdown.low, json[2].monthlyDetail[8].cveBreakdown.low, json[2].monthlyDetail[9].cveBreakdown.low, json[2].monthlyDetail[10].cveBreakdown.low, json[2].monthlyDetail[11].cveBreakdown.low, json[3].monthlyDetail[0].cveBreakdown.low, json[3].monthlyDetail[1].cveBreakdown.low, json[3].monthlyDetail[2].cveBreakdown.low, json[3].monthlyDetail[3].cveBreakdown.low, json[3].monthlyDetail[4].cveBreakdown.low, json[3].monthlyDetail[5].cveBreakdown.low, json[3].monthlyDetail[6].cveBreakdown.low, json[3].monthlyDetail[7].cveBreakdown.low, json[3].monthlyDetail[8].cveBreakdown.low, json[3].monthlyDetail[9].cveBreakdown.low, json[3].monthlyDetail[10].cveBreakdown.low, json[3].monthlyDetail[11].cveBreakdown.low, json[4].monthlyDetail[0].cveBreakdown.low, json[4].monthlyDetail[1].cveBreakdown.low, json[4].monthlyDetail[2].cveBreakdown.low, json[4].monthlyDetail[3].cveBreakdown.low, json[4].monthlyDetail[4].cveBreakdown.low, json[4].monthlyDetail[5].cveBreakdown.low, json[4].monthlyDetail[6].cveBreakdown.low, json[4].monthlyDetail[7].cveBreakdown.low, json[4].monthlyDetail[8].cveBreakdown.low, json[4].monthlyDetail[9].cveBreakdown.low, json[4].monthlyDetail[10].cveBreakdown.low, json[4].monthlyDetail[11].cveBreakdown.low, json[5].monthlyDetail[0].cveBreakdown.low, json[5].monthlyDetail[1].cveBreakdown.low, json[5].monthlyDetail[2].cveBreakdown.low, json[5].monthlyDetail[3].cveBreakdown.low, json[5].monthlyDetail[4].cveBreakdown.low, json[5].monthlyDetail[5].cveBreakdown.low, json[5].monthlyDetail[6].cveBreakdown.low, json[5].monthlyDetail[7].cveBreakdown.low, json[5].monthlyDetail[8].cveBreakdown.low, json[5].monthlyDetail[9].cveBreakdown.low, json[5].monthlyDetail[10].cveBreakdown.low, json[5].monthlyDetail[11].cveBreakdown.low]
+		            },
+		            {
+		              label: 'Medium Severity',
+		              backgroundColor: 'rgb(255, 255, 0)',
+		              borderColor: 'rgb(255, 255, 0)',
+		              fill: false,
+		              data: [json[0].monthlyDetail[0].cveBreakdown.medium, json[0].monthlyDetail[1].cveBreakdown.medium, json[0].monthlyDetail[2].cveBreakdown.medium, json[0].monthlyDetail[3].cveBreakdown.medium, json[0].monthlyDetail[4].cveBreakdown.medium, json[0].monthlyDetail[5].cveBreakdown.medium, json[0].monthlyDetail[6].cveBreakdown.medium, json[0].monthlyDetail[7].cveBreakdown.medium, json[0].monthlyDetail[8].cveBreakdown.medium, json[0].monthlyDetail[9].cveBreakdown.medium, json[0].monthlyDetail[10].cveBreakdown.medium, json[0].monthlyDetail[11].cveBreakdown.medium, json[1].monthlyDetail[0].cveBreakdown.low, json[1].monthlyDetail[1].cveBreakdown.low, json[1].monthlyDetail[2].cveBreakdown.low, json[1].monthlyDetail[3].cveBreakdown.low, json[1].monthlyDetail[4].cveBreakdown.low, json[1].monthlyDetail[5].cveBreakdown.low, json[1].monthlyDetail[6].cveBreakdown.low, json[1].monthlyDetail[7].cveBreakdown.low, json[1].monthlyDetail[8].cveBreakdown.low, json[1].monthlyDetail[9].cveBreakdown.low, json[1].monthlyDetail[10].cveBreakdown.low, json[1].monthlyDetail[11].cveBreakdown.low, json[2].monthlyDetail[0].cveBreakdown.medium, json[2].monthlyDetail[1].cveBreakdown.medium, json[2].monthlyDetail[2].cveBreakdown.medium, json[2].monthlyDetail[3].cveBreakdown.medium, json[2].monthlyDetail[4].cveBreakdown.medium, json[2].monthlyDetail[5].cveBreakdown.medium, json[2].monthlyDetail[6].cveBreakdown.medium, json[2].monthlyDetail[7].cveBreakdown.medium, json[2].monthlyDetail[8].cveBreakdown.medium, json[2].monthlyDetail[9].cveBreakdown.medium, json[2].monthlyDetail[10].cveBreakdown.medium, json[2].monthlyDetail[11].cveBreakdown.medium, json[3].monthlyDetail[0].cveBreakdown.medium, json[3].monthlyDetail[1].cveBreakdown.medium, json[3].monthlyDetail[2].cveBreakdown.medium, json[3].monthlyDetail[3].cveBreakdown.medium, json[3].monthlyDetail[4].cveBreakdown.medium, json[3].monthlyDetail[5].cveBreakdown.medium, json[3].monthlyDetail[6].cveBreakdown.medium, json[3].monthlyDetail[7].cveBreakdown.medium, json[3].monthlyDetail[8].cveBreakdown.medium, json[3].monthlyDetail[9].cveBreakdown.medium, json[3].monthlyDetail[10].cveBreakdown.medium, json[3].monthlyDetail[11].cveBreakdown.medium, json[4].monthlyDetail[0].cveBreakdown.medium, json[4].monthlyDetail[1].cveBreakdown.medium, json[4].monthlyDetail[2].cveBreakdown.medium, json[4].monthlyDetail[3].cveBreakdown.medium, json[4].monthlyDetail[4].cveBreakdown.medium, json[4].monthlyDetail[5].cveBreakdown.medium, json[4].monthlyDetail[6].cveBreakdown.medium, json[4].monthlyDetail[7].cveBreakdown.medium, json[4].monthlyDetail[8].cveBreakdown.medium, json[4].monthlyDetail[9].cveBreakdown.medium, json[4].monthlyDetail[10].cveBreakdown.medium, json[4].monthlyDetail[11].cveBreakdown.medium, json[5].monthlyDetail[0].cveBreakdown.medium, json[5].monthlyDetail[1].cveBreakdown.medium, json[5].monthlyDetail[2].cveBreakdown.medium, json[5].monthlyDetail[3].cveBreakdown.medium, json[5].monthlyDetail[4].cveBreakdown.medium, json[5].monthlyDetail[5].cveBreakdown.medium, json[5].monthlyDetail[6].cveBreakdown.medium, json[5].monthlyDetail[7].cveBreakdown.medium, json[5].monthlyDetail[8].cveBreakdown.medium, json[5].monthlyDetail[9].cveBreakdown.medium, json[5].monthlyDetail[10].cveBreakdown.medium, json[5].monthlyDetail[11].cveBreakdown.medium]
+		            },
+		            {
+		              label: 'High Severity',
+		              backgroundColor: 'rgb(255, 165, 0)',
+		              borderColor: 'rgb(255, 165, 0)',
+		              fill: false,
+		              data: [json[0].monthlyDetail[0].cveBreakdown.high, json[0].monthlyDetail[1].cveBreakdown.high, json[0].monthlyDetail[2].cveBreakdown.high, json[0].monthlyDetail[3].cveBreakdown.high, json[0].monthlyDetail[4].cveBreakdown.high, json[0].monthlyDetail[5].cveBreakdown.high, json[0].monthlyDetail[6].cveBreakdown.high, json[0].monthlyDetail[7].cveBreakdown.high, json[0].monthlyDetail[8].cveBreakdown.high, json[0].monthlyDetail[9].cveBreakdown.high, json[0].monthlyDetail[10].cveBreakdown.high, json[0].monthlyDetail[11].cveBreakdown.high, json[1].monthlyDetail[0].cveBreakdown.high, json[1].monthlyDetail[1].cveBreakdown.high, json[1].monthlyDetail[2].cveBreakdown.high, json[1].monthlyDetail[3].cveBreakdown.high, json[1].monthlyDetail[4].cveBreakdown.high, json[1].monthlyDetail[5].cveBreakdown.high, json[1].monthlyDetail[6].cveBreakdown.high, json[1].monthlyDetail[7].cveBreakdown.high, json[1].monthlyDetail[8].cveBreakdown.high, json[1].monthlyDetail[9].cveBreakdown.high, json[1].monthlyDetail[10].cveBreakdown.high, json[1].monthlyDetail[11].cveBreakdown.high, json[2].monthlyDetail[0].cveBreakdown.high, json[2].monthlyDetail[1].cveBreakdown.high, json[2].monthlyDetail[2].cveBreakdown.high, json[2].monthlyDetail[3].cveBreakdown.high, json[2].monthlyDetail[4].cveBreakdown.high, json[2].monthlyDetail[5].cveBreakdown.high, json[2].monthlyDetail[6].cveBreakdown.high, json[2].monthlyDetail[7].cveBreakdown.high, json[2].monthlyDetail[8].cveBreakdown.high, json[2].monthlyDetail[9].cveBreakdown.high, json[2].monthlyDetail[10].cveBreakdown.high, json[2].monthlyDetail[11].cveBreakdown.high, json[3].monthlyDetail[0].cveBreakdown.high, json[3].monthlyDetail[1].cveBreakdown.high, json[3].monthlyDetail[2].cveBreakdown.high, json[3].monthlyDetail[3].cveBreakdown.high, json[3].monthlyDetail[4].cveBreakdown.high, json[3].monthlyDetail[5].cveBreakdown.high, json[3].monthlyDetail[6].cveBreakdown.high, json[3].monthlyDetail[7].cveBreakdown.high, json[3].monthlyDetail[8].cveBreakdown.high, json[3].monthlyDetail[9].cveBreakdown.high, json[3].monthlyDetail[10].cveBreakdown.high, json[3].monthlyDetail[11].cveBreakdown.high, json[4].monthlyDetail[0].cveBreakdown.high, json[4].monthlyDetail[1].cveBreakdown.high, json[4].monthlyDetail[2].cveBreakdown.high, json[4].monthlyDetail[3].cveBreakdown.high, json[4].monthlyDetail[4].cveBreakdown.high, json[4].monthlyDetail[5].cveBreakdown.high, json[4].monthlyDetail[6].cveBreakdown.high, json[4].monthlyDetail[7].cveBreakdown.high, json[4].monthlyDetail[8].cveBreakdown.high, json[4].monthlyDetail[9].cveBreakdown.high, json[4].monthlyDetail[10].cveBreakdown.high, json[4].monthlyDetail[11].cveBreakdown.high, json[5].monthlyDetail[0].cveBreakdown.high, json[5].monthlyDetail[1].cveBreakdown.high, json[5].monthlyDetail[2].cveBreakdown.high, json[5].monthlyDetail[3].cveBreakdown.high, json[5].monthlyDetail[4].cveBreakdown.high, json[5].monthlyDetail[5].cveBreakdown.high, json[5].monthlyDetail[6].cveBreakdown.high, json[5].monthlyDetail[7].cveBreakdown.high, json[5].monthlyDetail[8].cveBreakdown.high, json[5].monthlyDetail[9].cveBreakdown.high, json[5].monthlyDetail[10].cveBreakdown.high, json[5].monthlyDetail[11].cveBreakdown.high]
+		            },
+		            {
+		              label: 'Critical Severity',
+		              backgroundColor: 'rgb(255, 0, 0)',
+		              borderColor: 'rgb(255, 0, 0)',
+		              fill: false,
+		              data: [json[0].monthlyDetail[0].cveBreakdown.critical, json[0].monthlyDetail[1].cveBreakdown.critical, json[0].monthlyDetail[2].cveBreakdown.critical, json[0].monthlyDetail[3].cveBreakdown.critical, json[0].monthlyDetail[4].cveBreakdown.critical, json[0].monthlyDetail[5].cveBreakdown.critical, json[0].monthlyDetail[6].cveBreakdown.critical, json[0].monthlyDetail[7].cveBreakdown.critical, json[0].monthlyDetail[8].cveBreakdown.critical, json[0].monthlyDetail[9].cveBreakdown.critical, json[0].monthlyDetail[10].cveBreakdown.critical, json[0].monthlyDetail[11].cveBreakdown.critical, json[1].monthlyDetail[0].cveBreakdown.critical, json[1].monthlyDetail[1].cveBreakdown.critical, json[1].monthlyDetail[2].cveBreakdown.critical, json[1].monthlyDetail[3].cveBreakdown.critical, json[1].monthlyDetail[4].cveBreakdown.critical, json[1].monthlyDetail[5].cveBreakdown.critical, json[1].monthlyDetail[6].cveBreakdown.critical, json[1].monthlyDetail[7].cveBreakdown.critical, json[1].monthlyDetail[8].cveBreakdown.critical, json[1].monthlyDetail[9].cveBreakdown.critical, json[1].monthlyDetail[10].cveBreakdown.critical, json[1].monthlyDetail[11].cveBreakdown.critical, json[2].monthlyDetail[0].cveBreakdown.critical, json[2].monthlyDetail[1].cveBreakdown.critical, json[2].monthlyDetail[2].cveBreakdown.critical, json[2].monthlyDetail[3].cveBreakdown.critical, json[2].monthlyDetail[4].cveBreakdown.critical, json[2].monthlyDetail[5].cveBreakdown.critical, json[2].monthlyDetail[6].cveBreakdown.critical, json[2].monthlyDetail[7].cveBreakdown.critical, json[2].monthlyDetail[8].cveBreakdown.critical, json[2].monthlyDetail[9].cveBreakdown.critical, json[2].monthlyDetail[10].cveBreakdown.critical, json[2].monthlyDetail[11].cveBreakdown.critical, json[3].monthlyDetail[0].cveBreakdown.critical, json[3].monthlyDetail[1].cveBreakdown.critical, json[3].monthlyDetail[2].cveBreakdown.critical, json[3].monthlyDetail[3].cveBreakdown.critical, json[3].monthlyDetail[4].cveBreakdown.critical, json[3].monthlyDetail[5].cveBreakdown.critical, json[3].monthlyDetail[6].cveBreakdown.critical, json[3].monthlyDetail[7].cveBreakdown.critical, json[3].monthlyDetail[8].cveBreakdown.critical, json[3].monthlyDetail[9].cveBreakdown.critical, json[3].monthlyDetail[10].cveBreakdown.critical, json[3].monthlyDetail[11].cveBreakdown.critical, json[4].monthlyDetail[0].cveBreakdown.critical, json[4].monthlyDetail[1].cveBreakdown.critical, json[4].monthlyDetail[2].cveBreakdown.critical, json[4].monthlyDetail[3].cveBreakdown.critical, json[4].monthlyDetail[4].cveBreakdown.critical, json[4].monthlyDetail[5].cveBreakdown.critical, json[4].monthlyDetail[6].cveBreakdown.critical, json[4].monthlyDetail[7].cveBreakdown.critical, json[4].monthlyDetail[8].cveBreakdown.critical, json[4].monthlyDetail[9].cveBreakdown.critical, json[4].monthlyDetail[10].cveBreakdown.critical, json[4].monthlyDetail[11].cveBreakdown.critical, json[5].monthlyDetail[0].cveBreakdown.critical, json[5].monthlyDetail[1].cveBreakdown.critical, json[5].monthlyDetail[2].cveBreakdown.critical, json[5].monthlyDetail[3].cveBreakdown.critical, json[5].monthlyDetail[4].cveBreakdown.critical, json[5].monthlyDetail[5].cveBreakdown.critical, json[5].monthlyDetail[6].cveBreakdown.critical, json[5].monthlyDetail[7].cveBreakdown.critical, json[5].monthlyDetail[8].cveBreakdown.critical, json[5].monthlyDetail[9].cveBreakdown.critical, json[5].monthlyDetail[10].cveBreakdown.critical, json[5].monthlyDetail[11].cveBreakdown.critical]
+		            }
+		         ]
+		      },
+		  });
+
+      var ctx = document.getElementById('myChart').getContext('2d');
 		    var chart = new Chart(ctx, {
 		      type: 'line',
 		      options: {
@@ -387,6 +453,7 @@
 		  },
 		});
 
+
 		var tbl = document.getElementById('myTable');
 		var row = tbl.insertRow();
 		var cell1 = row.insertCell();
@@ -456,18 +523,6 @@
 		cell30.innerHTML = json[5].cveBreakdown.critical
 
 		  });
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </script>
