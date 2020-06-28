@@ -11,7 +11,6 @@
     "monthlyDetail": [
       {
         "monthValue": 1,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -22,7 +21,6 @@
       },
       {
         "monthValue": 2,
-        "month": "2",
         "cveBreakdown": {
           "total": 24,
           "low": 0,
@@ -33,7 +31,6 @@
       },
       {
         "monthValue": 3,
-        "month": "3",
         "cveBreakdown": {
           "total": 36,
           "low": 0,
@@ -44,7 +41,6 @@
       },
       {
         "monthValue": 4,
-        "month": "4",
         "cveBreakdown": {
           "total": 14,
           "low": 0,
@@ -55,7 +51,6 @@
       },
       {
         "monthValue": 5,
-        "month": "5",
         "cveBreakdown": {
           "total": 1,
           "low": 0,
@@ -66,7 +61,6 @@
       },
       {
         "monthValue": 6,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -77,7 +71,6 @@
       },
       {
         "monthValue": 7,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -88,7 +81,6 @@
       },
       {
         "monthValue": 8,
-        "month": "8",
         "cveBreakdown": {
           "total": 1,
           "low": 0,
@@ -99,7 +91,6 @@
       },
       {
         "monthValue": 9,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -110,7 +101,6 @@
       },
       {
         "monthValue": 10,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -121,7 +111,6 @@
       },
       {
         "monthValue": 11,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -132,7 +121,6 @@
       },
       {
         "monthValue": 12,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -155,7 +143,6 @@
     "monthlyDetail": [
       {
         "monthValue": 1,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -166,7 +153,6 @@
       },
       {
         "monthValue": 2,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -177,7 +163,6 @@
       },
       {
         "monthValue": 3,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -188,7 +173,6 @@
       },
       {
         "monthValue": 4,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -199,7 +183,6 @@
       },
       {
         "monthValue": 5,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -210,7 +193,6 @@
       },
       {
         "monthValue": 6,
-        "month": "6",
         "cveBreakdown": {
           "total": 1,
           "low": 0,
@@ -221,7 +203,6 @@
       },
       {
         "monthValue": 7,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -232,7 +213,6 @@
       },
       {
         "monthValue": 8,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -243,7 +223,6 @@
       },
       {
         "monthValue": 9,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -254,7 +233,6 @@
       },
       {
         "monthValue": 10,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -265,7 +243,6 @@
       },
       {
         "monthValue": 11,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -276,7 +253,6 @@
       },
       {
         "monthValue": 12,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -299,7 +275,6 @@
     "monthlyDetail": [
       {
         "monthValue": 1,
-        "month": "1",
         "cveBreakdown": {
           "total": 1,
           "low": 0,
@@ -310,7 +285,6 @@
       },
       {
         "monthValue": 2,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -321,7 +295,6 @@
       },
       {
         "monthValue": 3,
-        "month": "3",
         "cveBreakdown": {
           "total": 1,
           "low": 0,
@@ -332,7 +305,6 @@
       },
       {
         "monthValue": 4,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -343,7 +315,6 @@
       },
       {
         "monthValue": 5,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -354,7 +325,6 @@
       },
       {
         "monthValue": 6,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -365,7 +335,6 @@
       },
       {
         "monthValue": 7,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -376,7 +345,6 @@
       },
       {
         "monthValue": 8,
-        "month": "8",
         "cveBreakdown": {
           "total": 1,
           "low": 0,
@@ -387,7 +355,6 @@
       },
       {
         "monthValue": 9,
-        "month": "9",
         "cveBreakdown": {
           "total": 1,
           "low": 0,
@@ -398,7 +365,6 @@
       },
       {
         "monthValue": 10,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -409,7 +375,6 @@
       },
       {
         "monthValue": 11,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -420,7 +385,6 @@
       },
       {
         "monthValue": 12,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -443,7 +407,6 @@
     "monthlyDetail": [
       {
         "monthValue": 1,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -454,7 +417,6 @@
       },
       {
         "monthValue": 2,
-        "month": "2",
         "cveBreakdown": {
           "total": 3,
           "low": 0,
@@ -465,7 +427,6 @@
       },
       {
         "monthValue": 3,
-        "month": "3",
         "cveBreakdown": {
           "total": 1,
           "low": 0,
@@ -476,7 +437,6 @@
       },
       {
         "monthValue": 4,
-        "month": "4",
         "cveBreakdown": {
           "total": 1,
           "low": 0,
@@ -487,7 +447,6 @@
       },
       {
         "monthValue": 5,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -498,7 +457,6 @@
       },
       {
         "monthValue": 6,
-        "month": "6",
         "cveBreakdown": {
           "total": 1,
           "low": 0,
@@ -509,7 +467,6 @@
       },
       {
         "monthValue": 7,
-        "month": "7",
         "cveBreakdown": {
           "total": 2,
           "low": 0,
@@ -520,7 +477,6 @@
       },
       {
         "monthValue": 8,
-        "month": "8",
         "cveBreakdown": {
           "total": 1,
           "low": 0,
@@ -531,7 +487,6 @@
       },
       {
         "monthValue": 9,
-        "month": "9",
         "cveBreakdown": {
           "total": 2,
           "low": 0,
@@ -542,7 +497,6 @@
       },
       {
         "monthValue": 10,
-        "month": "10",
         "cveBreakdown": {
           "total": 3,
           "low": 0,
@@ -553,7 +507,6 @@
       },
       {
         "monthValue": 11,
-        "month": "11",
         "cveBreakdown": {
           "total": 5,
           "low": 0,
@@ -564,7 +517,6 @@
       },
       {
         "monthValue": 12,
-        "month": "12",
         "cveBreakdown": {
           "total": 3,
           "low": 0,
@@ -587,7 +539,6 @@
     "monthlyDetail": [
       {
         "monthValue": 1,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -598,7 +549,6 @@
       },
       {
         "monthValue": 2,
-        "month": "2",
         "cveBreakdown": {
           "total": 1,
           "low": 0,
@@ -609,7 +559,6 @@
       },
       {
         "monthValue": 3,
-        "month": "3",
         "cveBreakdown": {
           "total": 1,
           "low": 0,
@@ -620,7 +569,6 @@
       },
       {
         "monthValue": 4,
-        "month": "4",
         "cveBreakdown": {
           "total": 3,
           "low": 1,
@@ -631,7 +579,6 @@
       },
       {
         "monthValue": 5,
-        "month": "5",
         "cveBreakdown": {
           "total": 1,
           "low": 0,
@@ -642,7 +589,6 @@
       },
       {
         "monthValue": 6,
-        "month": "6",
         "cveBreakdown": {
           "total": 2,
           "low": 1,
@@ -653,7 +599,6 @@
       },
       {
         "monthValue": 7,
-        "month": "7",
         "cveBreakdown": {
           "total": 4,
           "low": 0,
@@ -664,7 +609,6 @@
       },
       {
         "monthValue": 8,
-        "month": "8",
         "cveBreakdown": {
           "total": 1,
           "low": 0,
@@ -675,7 +619,6 @@
       },
       {
         "monthValue": 9,
-        "month": "9",
         "cveBreakdown": {
           "total": 1,
           "low": 0,
@@ -686,7 +629,6 @@
       },
       {
         "monthValue": 10,
-        "month": "10",
         "cveBreakdown": {
           "total": 3,
           "low": 1,
@@ -697,7 +639,6 @@
       },
       {
         "monthValue": 11,
-        "month": "11",
         "cveBreakdown": {
           "total": 6,
           "low": 1,
@@ -708,7 +649,6 @@
       },
       {
         "monthValue": 12,
-        "month": "12",
         "cveBreakdown": {
           "total": 3,
           "low": 0,
@@ -731,7 +671,6 @@
     "monthlyDetail": [
       {
         "monthValue": 1,
-        "month": "1",
         "cveBreakdown": {
           "total": 5,
           "low": 3,
@@ -742,7 +681,6 @@
       },
       {
         "monthValue": 2,
-        "month": "2",
         "cveBreakdown": {
           "total": 2,
           "low": 0,
@@ -753,7 +691,6 @@
       },
       {
         "monthValue": 3,
-        "month": "3",
         "cveBreakdown": {
           "total": 16,
           "low": 3,
@@ -764,7 +701,6 @@
       },
       {
         "monthValue": 4,
-        "month": "4",
         "cveBreakdown": {
           "total": 629,
           "low": 121,
@@ -775,7 +711,6 @@
       },
       {
         "monthValue": 5,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -786,7 +721,6 @@
       },
       {
         "monthValue": 6,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -797,7 +731,6 @@
       },
       {
         "monthValue": 7,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -808,7 +741,6 @@
       },
       {
         "monthValue": 8,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -819,7 +751,6 @@
       },
       {
         "monthValue": 9,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -830,7 +761,6 @@
       },
       {
         "monthValue": 10,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -841,7 +771,6 @@
       },
       {
         "monthValue": 11,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
@@ -852,7 +781,6 @@
       },
       {
         "monthValue": 12,
-        "month": null,
         "cveBreakdown": {
           "total": 0,
           "low": 0,
