@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Hello, world!</title>
+</head>
+
+<body>
+<canvas id="myChart"></canvas>
+<canvas id="myChart2"></canvas>
+<canvas id="myChart3"></canvas>
+<canvas id="myChart4"></canvas>
+<canvas id="myChart5"></canvas>
+<canvas id="myChart6"></canvas>
+<table id="myTable">
+    <thead>
+    <tr>
+        <th>Year</th>
+        <th>Low</th>
+        <th>Medium</th>
+        <th>High</th>
+        <th>Critical</th>
+    </tr>
+    </thead>
+</table>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.0.min.js"></script>
+<script>
+		$.getJSON('http://localhost:8080/analysedCVEData', function(json) {
+		      console.log(json);
+
+		    var ctx = document.getElementById('myChart').getContext('2d');
+		    var chart = new Chart(ctx, {
+		      type: 'line',
+		      options: {
+							responsive: true,
+							hoverMode: 'index',
+							stacked: false,
+							title: {
+								display: true,
+								text:  'Graph Showing How Many CVEs Were Published Per Month At Each Severity Level For Year: '+ json[0].year
+							},
+							scales: {
+								y: {
+									type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+									display: true,
+									position: 'left',
+								}
+							}
+						},
+
+		      // The data for our dataset
+		      data: {
+		          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+		          datasets: [
+		            {
+		              label: 'Low severity',
+		              backgroundColor: 'rgb(0, 128, 0)',
+		              borderColor: 'rgb(0, 128, 0)',
+		              fill: false,
+		              data: [json[0].monthlyDetail[0].cveBreakdown.low, json[0].monthlyDetail[1].cveBreakdown.low, json[0].monthlyDetail[1].cveBreakdown.low, json[0].monthlyDetail[2].cveBreakdown.low, json[0].monthlyDetail[3].cveBreakdown.low, json[0].monthlyDetail[4].cveBreakdown.low, json[0].monthlyDetail[5].cveBreakdown.low, json[0].monthlyDetail[6].cveBreakdown.low, json[0].monthlyDetail[7].cveBreakdown.low, json[0].monthlyDetail[8].cveBreakdown.low, json[0].monthlyDetail[9].cveBreakdown.low, json[0].monthlyDetail[10].cveBreakdown.low, json[0].monthlyDetail[11].cveBreakdown.low]
+		            },
+		            {
+		              label: 'Medium Severity',
+		              backgroundColor: 'rgb(255, 255, 0)',
+		              borderColor: 'rgb(255, 255, 0)',
+		              fill: false,
+		              data: [json[0].monthlyDetail[0].cveBreakdown.medium, json[0].monthlyDetail[1].cveBreakdown.medium, json[0].monthlyDetail[2].cveBreakdown.medium, json[0].monthlyDetail[3].cveBreakdown.medium, json[0].monthlyDetail[4].cveBreakdown.medium, json[0].monthlyDetail[5].cveBreakdown.medium, json[0].monthlyDetail[6].cveBreakdown.medium, json[0].monthlyDetail[7].cveBreakdown.medium, json[0].monthlyDetail[8].cveBreakdown.medium, json[0].monthlyDetail[9].cveBreakdown.medium, json[0].monthlyDetail[10].cveBreakdown.medium, json[0].monthlyDetail[11].cveBreakdown.medium]
+		            },
+		            {
+		              label: 'High Severity',
+		              backgroundColor: 'rgb(255, 165, 0)',
+		              borderColor: 'rgb(255, 165, 0)',
+		              fill: false,
+		              data: [json[0].monthlyDetail[0].cveBreakdown.high, json[0].monthlyDetail[1].cveBreakdown.high, json[0].monthlyDetail[2].cveBreakdown.high, json[0].monthlyDetail[3].cveBreakdown.high, json[0].monthlyDetail[4].cveBreakdown.high, json[0].monthlyDetail[5].cveBreakdown.high, json[0].monthlyDetail[6].cveBreakdown.high, json[0].monthlyDetail[7].cveBreakdown.high, json[0].monthlyDetail[8].cveBreakdown.high, json[0].monthlyDetail[9].cveBreakdown.high, json[0].monthlyDetail[10].cveBreakdown.high, json[0].monthlyDetail[11].cveBreakdown.high]
+		            },
+		            {
+		              label: 'Critical Severity',
+		              backgroundColor: 'rgb(255, 0, 0)',
+		              borderColor: 'rgb(255, 0, 0)',
+		              fill: false,
+		              data: [json[0].monthlyDetail[0].cveBreakdown.critical, json[0].monthlyDetail[1].cveBreakdown.critical, json[0].monthlyDetail[2].cveBreakdown.critical, json[0].monthlyDetail[3].cveBreakdown.critical, json[0].monthlyDetail[4].cveBreakdown.critical, json[0].monthlyDetail[5].cveBreakdown.critical, json[0].monthlyDetail[6].cveBreakdown.critical, json[0].monthlyDetail[7].cveBreakdown.critical, json[0].monthlyDetail[8].cveBreakdown.critical, json[0].monthlyDetail[9].cveBreakdown.critical, json[0].monthlyDetail[10].cveBreakdown.critical, json[0].monthlyDetail[11].cveBreakdown.critical]
+		            }
+		         ]
+		      },
+		  });
+
+		  var ctx = document.getElementById('myChart2').getContext('2d');
+		  var chart = new Chart(ctx, {
+		  //var yyy = json[0].monthlyDetail[0].cveBreakdown.low, json[0].monthlyDetail[1].cveBreakdown;
+		    type: 'line',
+		    options: {
+		        responsive: true,
+		        hoverMode: 'index',
+		        stacked: false,
+		        title: {
+		          display: true,
+		          text:  'Graph Showing How Many CVEs Were Published Per Month At Each Severity Level For Year: '+ json[1].year
+		        },
+		        scales: {
+		          y: {
+		            type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+		            display: true,
+		            position: 'left',
+		          }
+		        }
+		      },
+
+		    // The data for our dataset
+		    data: {
+		        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+		        datasets: [
+		          {
+		            label: 'Low severity',
+		            backgroundColor: 'rgb(0, 128, 0)',
+		            borderColor: 'rgb(0, 128, 0)',
+		            fill: false,
+		            data: [json[1].monthlyDetail[0].cveBreakdown.low, json[1].monthlyDetail[1].cveBreakdown.low, json[1].monthlyDetail[1].cveBreakdown.low, json[1].monthlyDetail[2].cveBreakdown.low, json[1].monthlyDetail[3].cveBreakdown.low, json[1].monthlyDetail[4].cveBreakdown.low, json[1].monthlyDetail[5].cveBreakdown.low, json[1].monthlyDetail[6].cveBreakdown.low, json[1].monthlyDetail[7].cveBreakdown.low, json[1].monthlyDetail[8].cveBreakdown.low, json[1].monthlyDetail[9].cveBreakdown.low, json[1].monthlyDetail[10].cveBreakdown.low, json[1].monthlyDetail[11].cveBreakdown.low]
+		          },
+		          {
+		            label: 'Medium Severity',
+		            backgroundColor: 'rgb(255, 255, 0)',
+		            borderColor: 'rgb(255, 255, 0)',
+		            fill: false,
+		            data: [json[1].monthlyDetail[1].cveBreakdown.medium, json[1].monthlyDetail[1].cveBreakdown.medium, json[1].monthlyDetail[2].cveBreakdown.medium, json[1].monthlyDetail[3].cveBreakdown.medium, json[1].monthlyDetail[4].cveBreakdown.medium, json[1].monthlyDetail[5].cveBreakdown.medium, json[1].monthlyDetail[6].cveBreakdown.medium, json[1].monthlyDetail[7].cveBreakdown.medium, json[1].monthlyDetail[8].cveBreakdown.medium, json[1].monthlyDetail[9].cveBreakdown.medium, json[1].monthlyDetail[10].cveBreakdown.medium, json[1].monthlyDetail[11].cveBreakdown.medium]
+		          },
+		          {
+		            label: 'High Severity',
+		            backgroundColor: 'rgb(255, 165, 0)',
+		            borderColor: 'rgb(255, 165, 0)',
+		            fill: false,
+		            data: [json[1].monthlyDetail[0].cveBreakdown.high, json[1].monthlyDetail[1].cveBreakdown.high, json[1].monthlyDetail[2].cveBreakdown.high, json[1].monthlyDetail[3].cveBreakdown.high, json[1].monthlyDetail[4].cveBreakdown.high, json[1].monthlyDetail[5].cveBreakdown.high, json[1].monthlyDetail[6].cveBreakdown.high, json[1].monthlyDetail[7].cveBreakdown.high, json[1].monthlyDetail[8].cveBreakdown.high, json[1].monthlyDetail[9].cveBreakdown.high, json[1].monthlyDetail[10].cveBreakdown.high, json[1].monthlyDetail[11].cveBreakdown.high]
+		          },
+		          {
+		            label: 'Critical Severity',
+		            backgroundColor: 'rgb(255, 0, 0)',
+		            borderColor: 'rgb(255, 0, 0)',
+		            fill: false,
+		            data: [json[1].monthlyDetail[0].cveBreakdown.critical, json[1].monthlyDetail[1].cveBreakdown.critical, json[1].monthlyDetail[2].cveBreakdown.critical, json[1].monthlyDetail[3].cveBreakdown.critical, json[1].monthlyDetail[4].cveBreakdown.critical, json[1].monthlyDetail[5].cveBreakdown.critical, json[1].monthlyDetail[6].cveBreakdown.critical, json[1].monthlyDetail[7].cveBreakdown.critical, json[1].monthlyDetail[8].cveBreakdown.critical, json[1].monthlyDetail[9].cveBreakdown.critical, json[1].monthlyDetail[10].cveBreakdown.critical, json[1].monthlyDetail[11].cveBreakdown.critical]
+		          }
+		       ]
+		    },
+		});
+
+		var ctx = document.getElementById('myChart3').getContext('2d');
+		var chart = new Chart(ctx, {
+		//var yyy = json[0].monthlyDetail[0].cveBreakdown.low, json[0].monthlyDetail[1].cveBreakdown;
+		  type: 'line',
+		  options: {
+		      responsive: true,
+		      hoverMode: 'index',
+		      stacked: false,
+		      title: {
+		        display: true,
+		        text:  'Graph Showing How Many CVEs Were Published Per Month At Each Severity Level For Year: '+ json[2].year
+		      },
+		      scales: {
+		        y: {
+		          type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+		          display: true,
+		          position: 'left',
+		        }
+		      }
+		    },
+
+		  // The data for our dataset
+		  data: {
+		      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+		      datasets: [
+		        {
+		          label: 'Low severity',
+		          backgroundColor: 'rgb(0, 128, 0)',
+		          borderColor: 'rgb(0, 128, 0)',
+		          fill: false,
+		          data: [json[2].monthlyDetail[0].cveBreakdown.low, json[2].monthlyDetail[1].cveBreakdown.low, json[2].monthlyDetail[1].cveBreakdown.low, json[2].monthlyDetail[2].cveBreakdown.low, json[2].monthlyDetail[3].cveBreakdown.low, json[2].monthlyDetail[4].cveBreakdown.low, json[2].monthlyDetail[5].cveBreakdown.low, json[2].monthlyDetail[6].cveBreakdown.low, json[2].monthlyDetail[7].cveBreakdown.low, json[2].monthlyDetail[8].cveBreakdown.low, json[2].monthlyDetail[9].cveBreakdown.low, json[2].monthlyDetail[10].cveBreakdown.low, json[2].monthlyDetail[11].cveBreakdown.low]
+		        },
+		        {
+		          label: 'Medium Severity',
+		          backgroundColor: 'rgb(255, 255, 0)',
+		          borderColor: 'rgb(255, 255, 0)',
+		          fill: false,
+		          data: [json[2].monthlyDetail[1].cveBreakdown.medium, json[2].monthlyDetail[1].cveBreakdown.medium, json[2].monthlyDetail[2].cveBreakdown.medium, json[2].monthlyDetail[3].cveBreakdown.medium, json[2].monthlyDetail[4].cveBreakdown.medium, json[2].monthlyDetail[5].cveBreakdown.medium, json[2].monthlyDetail[6].cveBreakdown.medium, json[2].monthlyDetail[7].cveBreakdown.medium, json[2].monthlyDetail[8].cveBreakdown.medium, json[2].monthlyDetail[9].cveBreakdown.medium, json[2].monthlyDetail[10].cveBreakdown.medium, json[2].monthlyDetail[11].cveBreakdown.medium]
+		        },
+		        {
+		          label: 'High Severity',
+		          backgroundColor: 'rgb(255, 165, 0)',
+		          borderColor: 'rgb(255, 165, 0)',
+		          fill: false,
+		          data: [json[2].monthlyDetail[0].cveBreakdown.high, json[2].monthlyDetail[1].cveBreakdown.high, json[2].monthlyDetail[2].cveBreakdown.high, json[2].monthlyDetail[3].cveBreakdown.high, json[2].monthlyDetail[4].cveBreakdown.high, json[2].monthlyDetail[5].cveBreakdown.high, json[2].monthlyDetail[6].cveBreakdown.high, json[2].monthlyDetail[7].cveBreakdown.high, json[2].monthlyDetail[8].cveBreakdown.high, json[2].monthlyDetail[9].cveBreakdown.high, json[2].monthlyDetail[10].cveBreakdown.high, json[2].monthlyDetail[11].cveBreakdown.high]
+		        },
+		        {
+		          label: 'Critical Severity',
+		          backgroundColor: 'rgb(255, 0, 0)',
+		          borderColor: 'rgb(255, 0, 0)',
+		          fill: false,
+		          data: [json[2].monthlyDetail[0].cveBreakdown.critical, json[2].monthlyDetail[1].cveBreakdown.critical, json[2].monthlyDetail[2].cveBreakdown.critical, json[2].monthlyDetail[3].cveBreakdown.critical, json[2].monthlyDetail[4].cveBreakdown.critical, json[2].monthlyDetail[5].cveBreakdown.critical, json[2].monthlyDetail[6].cveBreakdown.critical, json[2].monthlyDetail[7].cveBreakdown.critical, json[2].monthlyDetail[8].cveBreakdown.critical, json[2].monthlyDetail[9].cveBreakdown.critical, json[2].monthlyDetail[10].cveBreakdown.critical, json[2].monthlyDetail[11].cveBreakdown.critical]
+		        }
+		     ]
+		  },
+		});
+
+		var ctx = document.getElementById('myChart4').getContext('2d');
+		var chart = new Chart(ctx, {
+		//var yyy = json[0].monthlyDetail[0].cveBreakdown.low, json[0].monthlyDetail[1].cveBreakdown;
+		  type: 'line',
+		  options: {
+		      responsive: true,
+		      hoverMode: 'index',
+		      stacked: false,
+		      title: {
+		        display: true,
+		        text:  'Graph Showing How Many CVEs Were Published Per Month At Each Severity Level For Year: '+ json[3].year
+		      },
+		      scales: {
+		        y: {
+		          type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+		          display: true,
+		          position: 'left',
+		        }
+		      }
+		    },
+
+		  // The data for our dataset
+		  data: {
+		      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+		      datasets: [
+		        {
+		          label: 'Low severity',
+		          backgroundColor: 'rgb(0, 128, 0)',
+		          borderColor: 'rgb(0, 128, 0)',
+		          fill: false,
+		          data: [json[3].monthlyDetail[0].cveBreakdown.low, json[3].monthlyDetail[1].cveBreakdown.low, json[3].monthlyDetail[1].cveBreakdown.low, json[3].monthlyDetail[2].cveBreakdown.low, json[3].monthlyDetail[3].cveBreakdown.low, json[3].monthlyDetail[4].cveBreakdown.low, json[3].monthlyDetail[5].cveBreakdown.low, json[3].monthlyDetail[6].cveBreakdown.low, json[3].monthlyDetail[7].cveBreakdown.low, json[3].monthlyDetail[8].cveBreakdown.low, json[3].monthlyDetail[9].cveBreakdown.low, json[3].monthlyDetail[10].cveBreakdown.low, json[3].monthlyDetail[11].cveBreakdown.low]
+		        },
+		        {
+		          label: 'Medium Severity',
+		          backgroundColor: 'rgb(255, 255, 0)',
+		          borderColor: 'rgb(255, 255, 0)',
+		          fill: false,
+		          data: [json[3].monthlyDetail[1].cveBreakdown.medium, json[3].monthlyDetail[1].cveBreakdown.medium, json[3].monthlyDetail[2].cveBreakdown.medium, json[3].monthlyDetail[3].cveBreakdown.medium, json[3].monthlyDetail[4].cveBreakdown.medium, json[3].monthlyDetail[5].cveBreakdown.medium, json[3].monthlyDetail[6].cveBreakdown.medium, json[3].monthlyDetail[7].cveBreakdown.medium, json[3].monthlyDetail[8].cveBreakdown.medium, json[3].monthlyDetail[9].cveBreakdown.medium, json[3].monthlyDetail[10].cveBreakdown.medium, json[3].monthlyDetail[11].cveBreakdown.medium]
+		        },
+		        {
+		          label: 'High Severity',
+		          backgroundColor: 'rgb(255, 165, 0)',
+		          borderColor: 'rgb(255, 165, 0)',
+		          fill: false,
+		          data: [json[3].monthlyDetail[0].cveBreakdown.high, json[3].monthlyDetail[1].cveBreakdown.high, json[3].monthlyDetail[2].cveBreakdown.high, json[3].monthlyDetail[3].cveBreakdown.high, json[3].monthlyDetail[4].cveBreakdown.high, json[3].monthlyDetail[5].cveBreakdown.high, json[3].monthlyDetail[6].cveBreakdown.high, json[3].monthlyDetail[7].cveBreakdown.high, json[3].monthlyDetail[8].cveBreakdown.high, json[3].monthlyDetail[9].cveBreakdown.high, json[3].monthlyDetail[10].cveBreakdown.high, json[3].monthlyDetail[11].cveBreakdown.high]
+		        },
+		        {
+		          label: 'Critical Severity',
+		          backgroundColor: 'rgb(255, 0, 0)',
+		          borderColor: 'rgb(255, 0, 0)',
+		          fill: false,
+		          data: [json[3].monthlyDetail[0].cveBreakdown.critical, json[3].monthlyDetail[1].cveBreakdown.critical, json[3].monthlyDetail[2].cveBreakdown.critical, json[3].monthlyDetail[3].cveBreakdown.critical, json[3].monthlyDetail[4].cveBreakdown.critical, json[3].monthlyDetail[5].cveBreakdown.critical, json[3].monthlyDetail[6].cveBreakdown.critical, json[3].monthlyDetail[7].cveBreakdown.critical, json[3].monthlyDetail[8].cveBreakdown.critical, json[3].monthlyDetail[9].cveBreakdown.critical, json[3].monthlyDetail[10].cveBreakdown.critical, json[3].monthlyDetail[11].cveBreakdown.critical]
+		        }
+		     ]
+		  },
+		});
+
+		var ctx = document.getElementById('myChart5').getContext('2d');
+		var chart = new Chart(ctx, {
+		//var yyy = json[0].monthlyDetail[0].cveBreakdown.low, json[0].monthlyDetail[1].cveBreakdown;
+		  type: 'line',
+		  options: {
+		      responsive: true,
+		      hoverMode: 'index',
+		      stacked: false,
+		      title: {
+		        display: true,
+		        text:  'Graph Showing How Many CVEs Were Published Per Month At Each Severity Level For Year: '+ json[4].year
+		      },
+		      scales: {
+		        y: {
+		          type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+		          display: true,
+		          position: 'left',
+		        }
+		      }
+		    },
+
+		  // The data for our dataset
+		  data: {
+		      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+		      datasets: [
+		        {
+		          label: 'Low severity',
+		          backgroundColor: 'rgb(0, 128, 0)',
+		          borderColor: 'rgb(0, 128, 0)',
+		          fill: false,
+		          data: [json[4].monthlyDetail[0].cveBreakdown.low, json[4].monthlyDetail[1].cveBreakdown.low, json[4].monthlyDetail[1].cveBreakdown.low, json[4].monthlyDetail[2].cveBreakdown.low, json[4].monthlyDetail[3].cveBreakdown.low, json[4].monthlyDetail[4].cveBreakdown.low, json[4].monthlyDetail[5].cveBreakdown.low, json[4].monthlyDetail[6].cveBreakdown.low, json[4].monthlyDetail[7].cveBreakdown.low, json[4].monthlyDetail[8].cveBreakdown.low, json[4].monthlyDetail[9].cveBreakdown.low, json[4].monthlyDetail[10].cveBreakdown.low, json[4].monthlyDetail[11].cveBreakdown.low]
+		        },
+		        {
+		          label: 'Medium Severity',
+		          backgroundColor: 'rgb(255, 255, 0)',
+		          borderColor: 'rgb(255, 255, 0)',
+		          fill: false,
+		          data: [json[4].monthlyDetail[1].cveBreakdown.medium, json[4].monthlyDetail[1].cveBreakdown.medium, json[4].monthlyDetail[2].cveBreakdown.medium, json[4].monthlyDetail[3].cveBreakdown.medium, json[4].monthlyDetail[4].cveBreakdown.medium, json[4].monthlyDetail[5].cveBreakdown.medium, json[4].monthlyDetail[6].cveBreakdown.medium, json[4].monthlyDetail[7].cveBreakdown.medium, json[4].monthlyDetail[8].cveBreakdown.medium, json[4].monthlyDetail[9].cveBreakdown.medium, json[4].monthlyDetail[10].cveBreakdown.medium, json[4].monthlyDetail[11].cveBreakdown.medium]
+		        },
+		        {
+		          label: 'High Severity',
+		          backgroundColor: 'rgb(255, 165, 0)',
+		          borderColor: 'rgb(255, 165, 0)',
+		          fill: false,
+		          data: [json[4].monthlyDetail[0].cveBreakdown.high, json[4].monthlyDetail[1].cveBreakdown.high, json[4].monthlyDetail[2].cveBreakdown.high, json[4].monthlyDetail[3].cveBreakdown.high, json[4].monthlyDetail[4].cveBreakdown.high, json[4].monthlyDetail[5].cveBreakdown.high, json[4].monthlyDetail[6].cveBreakdown.high, json[4].monthlyDetail[7].cveBreakdown.high, json[4].monthlyDetail[8].cveBreakdown.high, json[4].monthlyDetail[9].cveBreakdown.high, json[4].monthlyDetail[10].cveBreakdown.high, json[4].monthlyDetail[11].cveBreakdown.high]
+		        },
+		        {
+		          label: 'Critical Severity',
+		          backgroundColor: 'rgb(255, 0, 0)',
+		          borderColor: 'rgb(255, 0, 0)',
+		          fill: false,
+		          data: [json[4].monthlyDetail[0].cveBreakdown.critical, json[4].monthlyDetail[1].cveBreakdown.critical, json[4].monthlyDetail[2].cveBreakdown.critical, json[4].monthlyDetail[3].cveBreakdown.critical, json[4].monthlyDetail[4].cveBreakdown.critical, json[4].monthlyDetail[5].cveBreakdown.critical, json[4].monthlyDetail[6].cveBreakdown.critical, json[4].monthlyDetail[7].cveBreakdown.critical, json[4].monthlyDetail[8].cveBreakdown.critical, json[4].monthlyDetail[9].cveBreakdown.critical, json[4].monthlyDetail[10].cveBreakdown.critical, json[4].monthlyDetail[11].cveBreakdown.critical]
+		        }
+		     ]
+		  },
+		});
+
+		var ctx = document.getElementById('myChart6').getContext('2d');
+		var chart = new Chart(ctx, {
+		//var yyy = json[0].monthlyDetail[0].cveBreakdown.low, json[0].monthlyDetail[1].cveBreakdown;
+		  type: 'line',
+		  options: {
+		      responsive: true,
+		      hoverMode: 'index',
+		      stacked: false,
+		      title: {
+		        display: true,
+		        text:  'Graph Showing How Many CVEs Were Published Per Month At Each Severity Level For Year: '+ json[5].year
+		      },
+		      scales: {
+		        y: {
+		          type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+		          display: true,
+		          position: 'left',
+		        }
+		      }
+		    },
+
+		  // The data for our dataset
+		  data: {
+		      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+		      datasets: [
+		        {
+		          label: 'Low severity',
+		          backgroundColor: 'rgb(0, 128, 0)',
+		          borderColor: 'rgb(0, 128, 0)',
+		          fill: false,
+		          data: [json[5].monthlyDetail[0].cveBreakdown.low, json[5].monthlyDetail[1].cveBreakdown.low, json[5].monthlyDetail[1].cveBreakdown.low, json[5].monthlyDetail[2].cveBreakdown.low, json[5].monthlyDetail[3].cveBreakdown.low, json[5].monthlyDetail[4].cveBreakdown.low, json[5].monthlyDetail[5].cveBreakdown.low, json[5].monthlyDetail[6].cveBreakdown.low, json[5].monthlyDetail[7].cveBreakdown.low, json[5].monthlyDetail[8].cveBreakdown.low, json[5].monthlyDetail[9].cveBreakdown.low, json[5].monthlyDetail[10].cveBreakdown.low, json[5].monthlyDetail[11].cveBreakdown.low]
+		        },
+		        {
+		          label: 'Medium Severity',
+		          backgroundColor: 'rgb(255, 255, 0)',
+		          borderColor: 'rgb(255, 255, 0)',
+		          fill: false,
+		          data: [json[5].monthlyDetail[1].cveBreakdown.medium, json[5].monthlyDetail[1].cveBreakdown.medium, json[5].monthlyDetail[2].cveBreakdown.medium, json[5].monthlyDetail[3].cveBreakdown.medium, json[5].monthlyDetail[4].cveBreakdown.medium, json[5].monthlyDetail[5].cveBreakdown.medium, json[5].monthlyDetail[6].cveBreakdown.medium, json[5].monthlyDetail[7].cveBreakdown.medium, json[5].monthlyDetail[8].cveBreakdown.medium, json[5].monthlyDetail[9].cveBreakdown.medium, json[5].monthlyDetail[10].cveBreakdown.medium, json[5].monthlyDetail[11].cveBreakdown.medium]
+		        },
+		        {
+		          label: 'High Severity',
+		          backgroundColor: 'rgb(255, 165, 0)',
+		          borderColor: 'rgb(255, 165, 0)',
+		          fill: false,
+		          data: [json[5].monthlyDetail[0].cveBreakdown.high, json[5].monthlyDetail[1].cveBreakdown.high, json[5].monthlyDetail[2].cveBreakdown.high, json[5].monthlyDetail[3].cveBreakdown.high, json[5].monthlyDetail[4].cveBreakdown.high, json[5].monthlyDetail[5].cveBreakdown.high, json[5].monthlyDetail[6].cveBreakdown.high, json[5].monthlyDetail[7].cveBreakdown.high, json[5].monthlyDetail[8].cveBreakdown.high, json[5].monthlyDetail[9].cveBreakdown.high, json[5].monthlyDetail[10].cveBreakdown.high, json[5].monthlyDetail[11].cveBreakdown.high]
+		        },
+		        {
+		          label: 'Critical Severity',
+		          backgroundColor: 'rgb(255, 0, 0)',
+		          borderColor: 'rgb(255, 0, 0)',
+		          fill: false,
+		          data: [json[5].monthlyDetail[0].cveBreakdown.critical, json[5].monthlyDetail[1].cveBreakdown.critical, json[5].monthlyDetail[2].cveBreakdown.critical, json[5].monthlyDetail[3].cveBreakdown.critical, json[5].monthlyDetail[4].cveBreakdown.critical, json[5].monthlyDetail[5].cveBreakdown.critical, json[5].monthlyDetail[6].cveBreakdown.critical, json[5].monthlyDetail[7].cveBreakdown.critical, json[5].monthlyDetail[8].cveBreakdown.critical, json[5].monthlyDetail[9].cveBreakdown.critical, json[5].monthlyDetail[10].cveBreakdown.critical, json[5].monthlyDetail[11].cveBreakdown.critical]
+		        }
+		     ]
+		  },
+		});
+
+		var tbl = document.getElementById('myTable');
+		var row = tbl.insertRow();
+		var cell1 = row.insertCell();
+		var cell2 = row.insertCell();
+		var cell3 = row.insertCell();
+		var cell4 = row.insertCell();
+		var cell5 = row.insertCell();
+		cell1.innerHTML = json[0].year;
+		cell2.innerHTML = json[0].cveBreakdown.low
+		cell3.innerHTML = json[0].cveBreakdown.medium
+		cell4.innerHTML = json[0].cveBreakdown.high
+		cell5.innerHTML = json[0].cveBreakdown.critical
+		var row1 = tbl.insertRow();
+		var cell6 = row1.insertCell();
+		var cell7 = row1.insertCell();
+		var cell8 = row1.insertCell();
+		var cell9 = row1.insertCell();
+		var cell10 = row1.insertCell();
+		cell6.innerHTML = json[1].year;
+		cell7.innerHTML = json[1].cveBreakdown.low
+		cell8.innerHTML = json[1].cveBreakdown.medium
+		cell9.innerHTML = json[1].cveBreakdown.high
+		cell10.innerHTML = json[1].cveBreakdown.critical
+		var row2 = tbl.insertRow();
+		var cell11 = row2.insertCell();
+		var cell12 = row2.insertCell();
+		var cell13 = row2.insertCell();
+		var cell14 = row2.insertCell();
+		var cell15 = row2.insertCell();
+		cell11.innerHTML = json[2].year;
+		cell12.innerHTML = json[2].cveBreakdown.low
+		cell13.innerHTML = json[2].cveBreakdown.medium
+		cell14.innerHTML = json[2].cveBreakdown.high
+		cell15.innerHTML = json[2].cveBreakdown.critical
+		var row3 = tbl.insertRow();
+		var cell16 = row3.insertCell();
+		var cell17 = row3.insertCell();
+		var cell18 = row3.insertCell();
+		var cell19 = row3.insertCell();
+		var cell20 = row3.insertCell();
+		cell16.innerHTML = json[3].year;
+		cell17.innerHTML = json[3].cveBreakdown.low
+		cell18.innerHTML = json[3].cveBreakdown.medium
+		cell19.innerHTML = json[3].cveBreakdown.high
+		cell20.innerHTML = json[3].cveBreakdown.critical
+    var row4 = tbl.insertRow();
+		var cell21 = row4.insertCell();
+		var cell22 = row4.insertCell();
+		var cell23 = row4.insertCell();
+		var cell24 = row4.insertCell();
+		var cell25 = row4.insertCell();
+		cell21.innerHTML = json[4].year;
+		cell22.innerHTML = json[4].cveBreakdown.low
+		cell23.innerHTML = json[4].cveBreakdown.medium
+		cell24.innerHTML = json[4].cveBreakdown.high
+		cell25.innerHTML = json[4].cveBreakdown.critical
+    var row5 = tbl.insertRow();
+		var cell26 = row5.insertCell();
+		var cell27 = row5.insertCell();
+		var cell28 = row5.insertCell();
+		var cell29 = row5.insertCell();
+		var cell30 = row5.insertCell();
+		cell26.innerHTML = json[5].year;
+		cell27.innerHTML = json[5].cveBreakdown.low
+		cell28.innerHTML = json[5].cveBreakdown.medium
+		cell29.innerHTML = json[5].cveBreakdown.high
+		cell30.innerHTML = json[5].cveBreakdown.critical
+
+		  });
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+
+</html>
