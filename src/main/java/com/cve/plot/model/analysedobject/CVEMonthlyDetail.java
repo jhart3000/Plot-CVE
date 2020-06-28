@@ -7,6 +7,5 @@ import lombok.Data;
 @Builder
 public class CVEMonthlyDetail {
   private int monthValue;
-  private String month;
   private CVEBreakdown cveBreakdown;
 }

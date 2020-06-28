@@ -140,7 +140,6 @@ public class CVEAnalysisService {
 
     return CVEMonthlyDetail.builder()
         .monthValue(month)
-        .month(String.valueOf(month))
         .cveBreakdown(
             CVEBreakdown.builder()
                 .low(low)
